@@ -45,7 +45,7 @@ final readonly class RequestResetPasswordTokenHandler
 
         $this->commandBus->dispatch(
             new SendResetPasswordEmail(
-                $command->email,
+                $user->getEmail(),
                 $command->channelCode,
                 $command->localeCode,
             ),
